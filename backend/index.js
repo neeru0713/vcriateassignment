@@ -19,10 +19,8 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+  app.use("/api/drawings", require("./routes/drawingRoutes"));
 
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
 
 
 app.listen(PORT, () => {
