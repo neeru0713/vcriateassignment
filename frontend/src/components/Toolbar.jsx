@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { setTool } from "../features/drawing/drawingSlice";
+import { setTool, toggleAnnotations } from "../features/drawing/drawingSlice";
 
 const Toolbar = () => {
   const dispatch = useDispatch();
@@ -35,6 +35,12 @@ const Toolbar = () => {
         className="px-4 py-2 bg-purple-500 text-white rounded"
       >
         Line
+      </button>
+      <button
+        onClick={() => dispatch(toggleAnnotations())}
+        className="px-4 py-2 bg-gray-500 text-white rounded"
+      >
+        Toggle Annotations
       </button>
     </div>
   );
