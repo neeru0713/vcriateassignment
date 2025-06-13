@@ -10,11 +10,13 @@ import {
   FaRegEye,
 } from "react-icons/fa";
 import { PiDotsSix } from "react-icons/pi";
+import { TbOval } from "react-icons/tb";
+
 
 const tools = [
   { name: "Rectangle", tool: "rectangle", icon: <FaRegSquare /> },
   { name: "Circle", tool: "circle", icon: <FaRegCircle /> },
-  { name: "Ellipse", tool: "ellipse", icon: <FaRegEdit /> },
+  { name: "Ellipse", tool: "ellipse", icon: <TbOval /> },
   { name: "Line", tool: "line", icon: <FaSlash /> },
   { name: "Diagonal", tool: "diagonal", icon: <FaDrawPolygon /> },
 ];
@@ -25,7 +27,7 @@ const Toolbar = () => {
   const handleRef = useRef(null);
 
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 20, y: 20 });
+  const [position, setPosition] = useState({ x: 50, y: 250 });
   const offset = useRef({ x: 0, y: 0 });
 
   const onMouseDown = (e) => {
