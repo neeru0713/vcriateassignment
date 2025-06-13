@@ -36,12 +36,19 @@ const Toolbar = () => {
       >
         Line
       </button>
+       <button
+        onClick={() => selectTool("diagonal")}
+        className="px-4 py-2 bg-pink-500 text-white rounded"
+      >
+        Diagonal
+      </button>
       <button
         onClick={() => dispatch(toggleAnnotations())}
         className="px-4 py-2 bg-gray-500 text-white rounded"
       >
         Toggle Annotations
       </button>
+     
     </div>
   );
 };
