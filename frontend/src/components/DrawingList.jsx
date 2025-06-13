@@ -5,7 +5,7 @@ const DrawingList = ({ onSelect }) => {
   const [drawings, setDrawings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/drawings")
+    fetch("https://vcriateassignment.onrender.com/api/drawings")
       .then((res) => res.json())
       .then((data) => setDrawings(data))
       .catch((err) => console.error("Failed to fetch drawings:", err));

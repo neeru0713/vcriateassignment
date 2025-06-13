@@ -12,7 +12,7 @@ const DrawingManager = () => {
   const saveDrawing = async () => {
     if (!drawingName) return alert("Please enter a name for your drawing");
     try {
-      const res = await fetch("http://localhost:3000/api/drawings", {
+      const res = await fetch("https://vcriateassignment.onrender.com/api/drawings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: drawingName, shapes }),
@@ -30,7 +30,7 @@ const DrawingManager = () => {
 
   const fetchDrawings = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/drawings");
+      const res = await fetch("https://vcriateassignment.onrender.com/api/drawings");
       const data = await res.json();
       setSavedDrawings(data);
     } catch (err) {
@@ -40,7 +40,7 @@ const DrawingManager = () => {
 
   const loadDrawing = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/drawings/${id}`);
+      const res = await fetch(`https://vcriateassignment.onrender.com/api/drawings/${id}`);
       const data = await res.json();
       dispatch(setShapes(data.shapes));
     } catch (err) {
