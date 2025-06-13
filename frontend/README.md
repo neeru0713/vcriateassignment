@@ -63,6 +63,41 @@ npm run dev
 ```
 
 
+## 🗂️ Backend APIs
+A simple Express.js server handles persistence of drawings using MongoDB.
+
+## 📤 Save Drawing
+POST /api/drawings
+
+Saves the current shapes with a custom name.
+
+Request Body:
+
+```json
+{
+  "name": "Living Room Plan",
+  "shapes": [ ... ]
+}
+```
+
+## 📥 List All Drawings
+GET /api/drawings
+
+Fetches all saved drawings with their names and IDs.
+
+## 📄 Get Single Drawing
+GET /api/drawings/:id
+
+Loads a specific saved drawing by ID and restores the shapes into the canvas.
+
+## 💾 Save & Load Features
+Drawings can be saved with custom names.
+
+A collapsible sidebar menu lists all saved drawings.
+
+Click any saved drawing to load it back into the canvas instantly.
+
+
 ## Submission Notes
 ✅ All required tools implemented
 
