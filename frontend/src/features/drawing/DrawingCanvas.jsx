@@ -9,6 +9,8 @@ import {
 } from "./drawingSlice";
 import { useRef, useState, useEffect } from "react";
 
+
+
 const DrawingCanvas = () => {
   const { shapes, viewAnnotations, selectedShapeIndex, tool } = useSelector(
     (state) => state.drawing
@@ -190,7 +192,7 @@ const DrawingCanvas = () => {
         }}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
-        className="w-full h-[80vh] border bg-white"
+        className="w-full h-[90vh] border bg-white"
       >
         {shapes.map((shape, idx) => {
           const isSelected = idx === selectedShapeIndex;
@@ -288,7 +290,9 @@ const DrawingCanvas = () => {
               return null;
           }
         })}
+       
       </svg>
+      
     </div>
   );
 };
