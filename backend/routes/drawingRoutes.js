@@ -13,4 +13,18 @@ router.get("/", async (req, res) => {
   res.json(drawings);
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const drawing = await Drawing.findById(req.params.id);
+    if (!drawing) {
+      return res.status(404).json({ message: "Drawing not found" });
+    }
+    res.json(drawing);
+  } catch (err) {
+    res.status(500).json({ message: "Error fetching drawing", error: err });
+  }
+});
+
+
+
 module.exports = router;

@@ -26,18 +26,22 @@ const drawingSlice = createSlice({
       state.selectedShapeIndex = null;
     },
     deleteShape: (state, action) => {
-  const index = action.payload;
-  if (index >= 0 && index < state.shapes.length) {
-    state.shapes.splice(index, 1);
+      const index = action.payload;
+      if (index >= 0 && index < state.shapes.length) {
+        state.shapes.splice(index, 1);
 
-    // Adjust selected index
-    if (state.selectedShapeIndex === index) {
-      state.selectedShapeIndex = null;
-    } else if (state.selectedShapeIndex > index) {
-      state.selectedShapeIndex -= 1;
-    }
-  }
-},
+        // Adjust selected index
+        if (state.selectedShapeIndex === index) {
+          state.selectedShapeIndex = null;
+        } else if (state.selectedShapeIndex > index) {
+          state.selectedShapeIndex -= 1;
+        }
+      }
+    },
+
+    loadShapes: (state, action) => {
+      state.shapes = action.payload;
+    },
 
     moveShape: (state, action) => {
       const { index, dx, dy } = action.payload;
@@ -68,6 +72,11 @@ const drawingSlice = createSlice({
           break;
       }
     },
+
+    setShapes: (state, action) => {
+      state.shapes = action.payload;
+    },
+
     resizeShape: (state, action) => {
       const { index, dx, dy, handleIndex } = action.payload;
       const shape = state.shapes[index];
@@ -120,6 +129,8 @@ export const {
   toggleAnnotations,
   resetDrawing,
   deleteShape,
+  loadShapes,
+  setShapes,
   moveShape,
   selectShape,
   resizeShape,

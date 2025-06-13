@@ -1,12 +1,79 @@
-# React + Vite
+# 🏗️ Building Planner (L2 Assignment)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A web application that allows users to create, annotate, and view building plans using various drawing tools. Built with React, SVG, Redux, and Tailwind CSS for a smooth, interactive UI experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Drawing Tools**: Create rectangles, circles, ellipses, lines, and diagonals.
+- **Draggable Toolbar**: Reposition the tool menu freely on the canvas.
+- **Shape Annotations**: Automatically label shapes with dimensions.
+- **Selectable Shapes**: Click to select, move, or edit shapes.
+- **Toggle Annotations**: Easily show/hide annotations with a single click.
+- **Hidden Line Logic**: When drawing 3D-like shapes (e.g. cubes), lines meant to be "behind" are hidden automatically.
+- **Minimal UI**: Clean interface for enhanced user focus and usability.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🖼️ Screenshots
+ Main Interface
+
+ ![Interface](./screenshots/CV2.png)
+  ![Interface](./screenshots/CV1.png)
+
+---
+
+## 🧱 Tech Stack
+
+- **Frontend**: React.js
+- **State Management**: Redux Toolkit
+- **Styling**: Tailwind CSS
+- **Canvas**: SVG
+
+---
+
+
+
+## 🧠 Data Model
+
+Each shape stored in Redux has the following structure:
+
+```js
+{
+  type: "rectangle" | "circle" | "ellipse" | "line" | "diagonal",
+  coords: { ... }, // varies by shape
+  annotation: { label: "W:100 H:60" }
+}
+```
+
+---
+
+## Setup Instructions
+📦 Prerequisites
+Node.js ≥ 14.x
+
+npm or yarn
+
+```js
+git clone https://github.com/neeru0713/vcriateassignment
+cd building-planner
+npm install
+npm run dev
+```
+
+
+## Submission Notes
+✅ All required tools implemented
+
+✅ Clean, minimal interface with Tailwind
+
+✅ Annotation toggle and shape manipulation
+
+✅ Hidden line detection logic included
+
+✅ Extra: Draggable toolbar and ellipse support
+
+
+
+

@@ -27,7 +27,7 @@ const Toolbar = () => {
   const handleRef = useRef(null);
 
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 50, y: 250 });
+  const [position, setPosition] = useState({ x: 300, y: 250 });
   const offset = useRef({ x: 0, y: 0 });
 
   const onMouseDown = (e) => {

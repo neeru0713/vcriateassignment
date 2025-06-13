@@ -8,10 +8,10 @@ import {
   resizeShape,
 } from "./drawingSlice";
 import { useRef, useState, useEffect } from "react";
+import { loadShapes } from "./drawingSlice"; 
 
 
-
-const DrawingCanvas = () => {
+const DrawingCanvas = ({loadedDrawing}) => {
   const { shapes, viewAnnotations, selectedShapeIndex, tool } = useSelector(
     (state) => state.drawing
   );
@@ -20,6 +20,15 @@ const DrawingCanvas = () => {
   const wrapperRef = useRef(); // New ref for the wrapper div
   const [startPos, setStartPos] = useState(null);
   const [resizing, setResizing] = useState(null);
+
+  useEffect(() => {
+  if (loadedDrawing) {
+    dispatch(loadShapes(loadedDrawing.shapes)); // You need to define this action
+  }
+}, [loadedDrawing, dispatch]);
+
+
+
 
   useEffect(() => {
     const handleKeyDown = (e) => {
